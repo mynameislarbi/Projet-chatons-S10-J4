@@ -1,0 +1,16 @@
+<%= form_with url: items_path, method: :post, class: "form-group" do |f| %>
+ <%= f.label :name,'Name' %>
+  <%= f.text_field :name, class: "form-control", placeholder: 'Name'%>
+  <div class="form-row">
+    <div class="col">
+      <%= f.label :price,'Price' %>
+      <%= f.number_field :price, class: "form-control", min:1,max:2000, rows:1,placeholder: '£' %>
+    </div>
+    <div class="col">
+      <%= f.label :picture,'Picture' %>
+      <%= f.file_field :cat_picture , class: "form-control"%>
+    </div>
+  </div>
+  <br>
+  <%= f.submit "Poster", class: "btn event-btn" %>
+<% end %>

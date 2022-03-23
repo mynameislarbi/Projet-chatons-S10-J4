@@ -1,0 +1,26 @@
+.buying-page {
+    background-color: rgba(0, 0, 0, 0.267);
+    width : 100vw;
+    height : 100vh;
+    color : whitesmoke;
+    display : flex;
+    justify-content: center;
+}
+
+.buying-page img{
+    max-width : 100%;
+    max-height: 50vh;
+}
+
+.buying-page h2 {
+    border-top: 1px solid lightgray;
+}
+
+.item-infos {
+    color : black;
+    text-align: center;
+    background-color: whitesmoke;
+    margin-top : 30px;
+    height : 70vh;
+    width : 35vw;
+}

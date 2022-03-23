@@ -1,0 +1,12 @@
+<div class="flex-land">
+  <div class="left-div twin"></div>
+  <div class="right-div twin"><a href="chat" class="land-name"><h1 class="display-3"><b>The <i class="text-warning">Cats</i> we love to <b>adore</b></h1></a><br>
+  
+  </div>  
+</div>
+
+<script>
+  window.addEventListener("mousemove", function(e){
+    document.getElementsByClassName("right-div")[0].style.transform = `translate(${e.clientX / 100}%, ${e.clientY / 100}%)`
+  })
+</script>

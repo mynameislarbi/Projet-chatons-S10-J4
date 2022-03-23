@@ -1,0 +1,31 @@
+<% @except_footer = true%>
+<div class="login-body">
+<div class="login-outer border border-warning">
+    <div class="contact" >
+<br><h2>Contact<b class="text-warning">.</b></h2><br>
+
+<form action="/ma-page-de-traitement" method="post">
+    <div class="form-group mb-4">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="user_name">
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="mail">Your mail</label>
+        <input type="email" id="mail" name="user_mail">
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="msg">Your message</label>
+        <textarea id="msg" name="user_message"></textarea>
+    </div>
+
+<button class= "btn btn-lg btn-warning btn-block"
+        type="button" style="text-align:center">
+        <center><p>Contact us</p>
+</button>
+</form>
+
+</div>
+</div>
+</div>

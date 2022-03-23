@@ -1,0 +1,12 @@
+.payment-div {
+    border : 1px slateblue solid;
+    width : 100%;
+    height : 100%;
+    display : flex;
+    align-items: center;
+}
+
+.payment-div svg {
+    fill : black;
+    height : 50%;
+}

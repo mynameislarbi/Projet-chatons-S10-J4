@@ -1,0 +1,16 @@
+<div class="updated-cart-body border border-warning" id="cart">
+    <div class="cart-title">
+        <h4>Panier</h4>
+    </div>
+    <div class="cart-elements">
+        <% @cart.each do |item| %>
+            <div>
+                <a href="<%= new_charge_path %>" class="nav-link text-dark" ><%= Item.find(item.item_id).name %><br>$<%= item.price %></a>
+                <%= link_to "Enlever", cart_path(item.id), method: :delete, remote: true, class: "nav-link text-danger" %>
+            </div>
+        <% end %>
+    </div>
+    <div class="bottom-payment">
+        <%= link_to "Total : $#{cart_total}", carts_path, method: :get, class: "btn btn-sm btn-warning" %>
+    </div>
+</div>

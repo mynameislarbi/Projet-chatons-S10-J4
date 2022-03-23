@@ -1,0 +1,382 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+ .buying-page {
+    background-color: rgba(0, 0, 0, 0.267);
+    width : 100vw;
+    height : 100vh;
+    color : whitesmoke;
+    display : flex;
+    justify-content: center;
+}
+
+.buying-page img{
+    max-width : 100%;
+    max-height: 50vh;
+}
+
+.buying-page h2 {
+    border-top: 1px solid lightgray;
+}
+
+.item-infos {
+    color : black;
+    text-align: center;
+    background-color: whitesmoke;
+    margin-top : 30px;
+    height : 70vh;
+    width : 35vw;
+}
+
+.fermer {
+    animation: fermer 1s ease-in-out;
+    height : 0px;
+    overflow-y: hidden;
+}
+
+.ouvrir {
+    animation: ouvrir 1s ease-in-out;
+    height : 270px;
+    overflow-y: hidden;
+}
+
+.unfade {
+    animation : 1s unfade ease-in-out;
+}
+
+@keyframes ourvrir {
+    0% { height : 0px; }
+    100% { height : 270px; }
+}
+
+@keyframes fermer {
+    0% { height : 270px; }
+    100% { height : 0px; }
+}
+
+@keyframes unfade {
+    0% { opacity: 0%; }
+    100% { opacity: 100%; }
+}
+
+.item-list {
+    padding : 0 5px;
+    margin-top : calc(15vh + 5px);
+    display : flex;
+    flex-wrap : wrap;
+    justify-content: space-between;
+}
+
+.item-body {
+    background-image: none;
+    background-color: whitesmoke;
+}
+
+.item-image {
+    position : relative;
+    height : 250px;
+    margin : 5px 5px;
+    text-align : left;
+}
+
+.item-image img{
+    display : block;
+    height : 250px;
+}
+
+.buying-div {
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    padding : 0 30% 0 5px;
+    color : whitesmoke;
+}
+
+.darken {
+    background-color: rgba(0, 0, 0, 0.473);
+}
+
+.transparent {
+    background-color : transparent;
+    color : whitesmoke;
+}
+
+.price {
+    color : lightgray;
+    position : absolute;
+    bottom : -10px;
+    right : 10px;
+}
+
+.bb {
+    margin-left : 5px;
+}
+
+.login {
+    align-content : center;
+    width : 250px;
+    height : fit-content;
+    background-color : whitesmoke;
+}
+
+.login-outer {
+    text-align: center;
+    width : 30vw;
+    padding-bottom : 20px;
+    display : flex;
+    justify-content : center;
+    background-color : whitesmoke;
+}
+
+.login-body {
+    margin-top : calc(20vh + 5px);
+    width : 100%;
+    display : flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.sign-up {
+    align-content : center;
+    width : 250px;
+    height : 570px;
+    background-color : whitesmoke;
+}
+
+.contact {
+    align-content : center;
+    width : 250px;
+    height : 570px;
+    background-color : whitesmoke;
+}
+
+.parent {
+   height: 80vh;
+   display: flex;
+   align-items: center;
+}
+
+.cart-body {
+    text-align : left;
+    z-index : 7;
+    animation : openCart 1s ease-in-out;
+    position : fixed;
+    top : 100px;
+    right : 30px;
+    width : 15%;
+    height : 400px;
+    border-radius : 5px;
+    background-color : whitesmoke;
+}
+
+.updated-cart-body {
+    text-align : left;
+    z-index : 7;
+    position : fixed;
+    top : 70px;
+    right : 30px;
+    width : 15%;
+    height : 400px;
+    border-radius : 5px;
+    background-color : whitesmoke;
+}
+
+.cart-title {
+    padding : 10px;
+}
+
+.cart-elements {
+    height : 70%;
+    overflow-y : auto;
+    scrollbar-color:  lightgray whitesmoke;
+}
+
+@keyframes openCart {
+    0% { right : 430px; top : -150px; transform: scale(0.1); opacity : 10%; }
+    100% { right : 30px; top : 100px; transform: scale(1); opacity : 100%; }
+}
+
+.bottom-payment {
+    text-align : center;
+    padding-top : 20px;
+}
+
+.cart-elements-index {
+    height : 80%;
+    width : 100%;
+    overflow-y : auto;
+    scrollbar-color:  lightgray whitesmoke;
+}
+
+.index-cart-items {
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin : 10px 10px;
+}
+
+.cart-elements-index img {
+    height : 100px;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-image: url("cat13.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+
+.d-block {  
+    border-radius: 150px;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgda(0,0,0,0.75),rgda(0,0,0,0.75)),url(background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 120px;
+    cursor: pointer
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-decoration: uppercase;
+}
+
+input[type="checkbox"]:checked {
+    filter: invert(100%) hue-rotate(4deg) brightness(1.7);
+}
+
+.footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: #ffd90100 url(img/footer.png) ;
+}
+
+.flex-land {
+    color : whitesmoke;
+    display : flex;
+    flex-wrap : wrap;
+    justify-content: space-around;
+    height : 100%;
+    align-items: center;
+}
+
+.twin {
+    width : 30%;
+    height : 60%;
+}
+
+@keyframes float {
+    0% { transform: translateY(0%); }
+    50% { transform: translateY(10%); }
+    100% { transform: translateY(0%); }
+}
+
+.footer-link{
+    color : pink;
+}
+
+.land-name:link, .land-name:visited, .land-name:active {
+    color : whitesmoke;
+    text-decoration: none;
+}
+
+.cats-nav {
+    width : 100%;
+    background-color: rgba(0, 0, 0, 0.521);
+    background-position: center;
+    color : whitesmoke;
+    position: fixed;
+    top : 0;
+    z-index : 6;
+    height : 15vh;
+    box-shadow: 0 0 10px black;
+}
+
+.cat-nav-shadow {
+    display : flex;
+    justify-content: flex-end;
+    align-items: center;
+    width : 100%;
+    height : 100%;
+    background-color: rgba(0, 0, 0, 0.40);
+}
+
+.cats-nav ul {
+    margin-right : 10vh;
+    list-style: none;
+    display : flex;
+    justify-content: space-between;
+}
+
+.cats-nav a:hover, .cats-nav a:active {
+    color :rgb(253, 194, 0);
+}
+
+.cats-nav a {
+    color : whitesmoke;
+    text-decoration: bold;
+}
+
+.cats-nav svg {
+    fill : rgb(253, 194, 0);
+    width : 5vh;
+}
+
+
+.payment-div {
+    border : 1px slateblue solid;
+    width : 100%;
+    height : 100%;
+    display : flex;
+    align-items: center;
+}
+
+.payment-div svg {
+    fill : black;
+    height : 50%;
+}

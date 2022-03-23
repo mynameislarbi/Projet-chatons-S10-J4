@@ -1,0 +1,30 @@
+<% @disable_nav = true %>
+
+<div class="buying-page">
+    <div class="item-infos border border-warning">
+        <div class="cart-elements-index">
+            <% @cart.each do |item| %>
+                <div class="index-cart-items">
+                    <%= image_tag(Item.find(item.item_id).picture) if Item.find(item.item_id).picture.attached?  %>
+                    <a href="<%= new_charge_path %>" class="nav-link text-dark" ><%= Item.find(item.item_id).name %><br>$<%= item.price %></a>
+                    <%= link_to "Enlever", cart_path(item.id), method: :delete, class: "nav-link text-danger" %>
+                </div>
+            <% end %>
+        </div>
+        <%= form_with url: charges_path, method: :post do |f|%>
+            <%= f.hidden_field :from_cart, value: true %>
+            <article>
+                <% if flash[:error].present? %>
+                    <div id="error_explanation">
+                        <p><%= flash[:error] %></p>
+                    </div>
+                <% end %>
+            </article>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="Informations"
+                    data-amount="<%= cart_total * 100 %>"
+                    data-locale="auto"></script>
+        <% end %>
+    </div>
+</div>

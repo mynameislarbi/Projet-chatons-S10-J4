@@ -1,0 +1,39 @@
+<div class="item-list">
+    <% @items.each do |item| %>
+    <div class="item-image hoverable">
+        <%= image_tag(item.picture) if item.picture.attached?  %>
+        <div id="photo<%= item.id %>" class="collapse buying-div">
+                <%= form_with url: carts_path(item.id), method: :post, remote: true do |form| %>
+                    <%= form.hidden_field :item_id, value: item.id %>
+                    <%= form.hidden_field :quantity, value: 1 %><br>
+                    <%= form.submit "Panier", class: "bb btn btn-sm btn-outline-warning" %>
+                <% end %>
+                <br>
+                <%= link_to "Acheter", item_path(item.id), method: :get, class: "bb btn btn-sm btn-outline-warning" %>
+                <p class="price">$<%= item.price %></p>
+        </div>
+    </div>
+    <% end %>
+</div>
+
+<script>
+    items = document.getElementsByClassName("hoverable")
+    for (let i = 0; i < items.length; i++){
+        items[i].addEventListener("mouseover", function(){
+            document.getElementsByClassName("buying-div")[i].classList.toggle("collapse")
+            document.getElementsByClassName("buying-div")[i].classList.toggle("darken")
+        })
+    }
+    for (let i = 0; i < items.length; i++){
+        items[i].addEventListener("mouseout", function(){
+            document.getElementsByClassName("buying-div")[i].classList.toggle("collapse")
+            document.getElementsByClassName("buying-div")[i].classList.toggle("darken")
+        })
+    }
+
+    document.getElementsByTagName("body")[0].addEventListener("click", function(){
+        if (document.getElementById("cart")) {
+            document.getElementById("cart").remove()
+        }
+    })
+</script>

@@ -1,0 +1,26 @@
+<% @disable_nav = true %>
+
+<div class="buying-page">
+    <div class="item-infos border border-warning">
+        <% item = Item.find(params[:id].to_i) %>
+        <%= image_tag(item.picture) if item.picture.attached?  %>
+        <h2><%= item.name %><b class="text-warning">.</b> <small class="text-muted">$<%= item.price %></small></h2>
+        <%= form_with url: charges_path, method: :post do |f|%>
+            <%= f.hidden_field :from_cart, value: false %>
+            <%= f.hidden_field :item_id, value: item.id %>
+            <article>
+                <% if flash[:error].present? %>
+                    <div id="error_explanation">
+                        <p><%= flash[:error] %></p>
+                    </div>
+                <% end %>
+            </article>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="Informations"
+                    data-amount="<%= item.price * 100 %>"
+                    data-locale="auto">
+                    </script>
+        <% end %>
+    </div>
+</div>

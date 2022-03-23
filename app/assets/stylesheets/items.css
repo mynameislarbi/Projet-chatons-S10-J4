@@ -1,0 +1,85 @@
+.fermer {
+    animation: fermer 1s ease-in-out;
+    height : 0px;
+    overflow-y: hidden;
+}
+
+.ouvrir {
+    animation: ouvrir 1s ease-in-out;
+    height : 270px;
+    overflow-y: hidden;
+}
+
+.unfade {
+    animation : 1s unfade ease-in-out;
+}
+
+@keyframes ourvrir {
+    0% { height : 0px; }
+    100% { height : 270px; }
+}
+
+@keyframes fermer {
+    0% { height : 270px; }
+    100% { height : 0px; }
+}
+
+@keyframes unfade {
+    0% { opacity: 0%; }
+    100% { opacity: 100%; }
+}
+
+.item-list {
+    padding : 0 5px;
+    margin-top : calc(15vh + 5px);
+    display : flex;
+    flex-wrap : wrap;
+    justify-content: space-between;
+}
+
+.item-body {
+    background-image: none;
+    background-color: whitesmoke;
+}
+
+.item-image {
+    position : relative;
+    height : 250px;
+    margin : 5px 5px;
+    text-align : left;
+}
+
+.item-image img{
+    display : block;
+    height : 250px;
+}
+
+.buying-div {
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    padding : 0 30% 0 5px;
+    color : whitesmoke;
+}
+
+.darken {
+    background-color: rgba(0, 0, 0, 0.473);
+}
+
+.transparent {
+    background-color : transparent;
+    color : whitesmoke;
+}
+
+.price {
+    color : lightgray;
+    position : absolute;
+    bottom : -10px;
+    right : 10px;
+}
+
+.bb {
+    margin-left : 5px;
+}
